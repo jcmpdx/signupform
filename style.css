@@ -5,36 +5,45 @@ html, body {
     width: 100%;
 }
 .left_content {
-    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 33%;
     height: 100vh;
     overflow: hidden;
     text-align: center;
+    min-width: 380px;
+    background-image: url("./images/mountains.jpg");
+    background-position: unset;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .right_content{
     background-color: tomato;
     width: 67%;
 }
 body > div > img {
-
+    z-index: 10;
 }
 #banner {
-    background-color: rgba(0, 0, 0, 0.199);
-    height: 150px;
+    background-color: rgba(0, 0, 0, 0.33);
+    height: 200px;
     margin-top: 200px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 60px;
+    font-size: 70px;
 }
 #logo_img {
     height: 133px;
 }
 
 .left_content > span {
-    position: absolute;
-    bottom: 20px;
-    left: 13%;
+    margin-bottom: 10px;
+}
+
+span > a {
+    color: white;
 }
