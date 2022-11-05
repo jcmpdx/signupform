@@ -1,0 +1,40 @@
+html, body {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    width: 100%;
+}
+.left_content {
+    background-color: cadetblue;
+    width: 33%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+.right_content{
+    background-color: tomato;
+    width: 67%;
+}
+body > div > img {
+
+}
+#banner {
+    background-color: rgba(0, 0, 0, 0.199);
+    height: 150px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 60px;
+}
+#logo_img {
+    height: 133px;
+}
+
+.left_content > span {
+    position: absolute;
+    bottom: 20px;
+    left: 13%;
+}
