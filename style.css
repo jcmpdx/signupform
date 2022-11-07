@@ -18,32 +18,81 @@ html, body {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.right_content{
-    background-color: tomato;
-    width: 67%;
-}
 body > div > img {
     z-index: 10;
 }
 #banner {
     background-color: rgba(0, 0, 0, 0.33);
     height: 200px;
-    margin-top: 200px;
+    margin-top: 146px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 70px;
+    font-size: clamp(5vw, 7vw, 9vw);
 }
 #logo_img {
     height: 133px;
 }
-
 .left_content > span {
     margin-bottom: 10px;
 }
-
 span > a {
     color: white;
+}
+.right_content{
+    background-color: #f9fafb;
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#caption_top, #sign_in {
+    padding: 0 60px;
+}
+#caption_top {
+    font-size: 30px;
+    padding-right: 200px;
+}
+form {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form > div {
+    background-color: white;
+    box-shadow: 1px 5px 5px rgb(199, 199, 199);
+    padding: 10px 0 2px 60px;
+}
+form > div > div {
+    display: flex;
+    gap: 70px;
+    padding-bottom: 20px;
+}
+h1 {
+    font-size: 30px;
+    margin: 2px 0 20px 0;
+}
+.form_group {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+label {
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+}
+form > button {
+    width: 120px;
+    height: 40px;
+    margin: 18px 0 0 60px;
+}
+#sign_in {
+    font-size: 18px;
+}
+#sign_in > a {
+    color: green
 }
