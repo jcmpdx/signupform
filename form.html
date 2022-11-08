@@ -42,7 +42,7 @@
                         </div>
                         <div class="form_group">
                             <label for="phone">PHONE NUMBER</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" placeholder="8081112233" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="12">
                         </div>
                     </div>
                     <div>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="create">Create Account</button>
+                <button id="create" type="submit">Create Account</button>
             </form>   
         </div>   
         <div id="sign_in">Already have an account? <a href="">Log in</a></div>
@@ -66,13 +66,20 @@
 <script>
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirm_password');
+    const submitButton = document.getElementById('create');
+    const good = 'box-shadow: none;';
+    const bad = 'box-shadow: 0 0 3px 2px red;';
 
     confirmPassword.addEventListener('change', function() {
         if (password.value !== '') {
             if (confirmPassword.value === password.value) {
-                confirmPassword.style.border = 'solid green 2px';
+                submitButton.disabled = false;
+                confirmPassword.style = good;
+                password.style = good;
             } else if (confirmPassword.value !== password.value) {
-                confirmPassword.style.border = 'solid red 2px';
+                submitButton.disabled = true;
+                confirmPassword.style = bad;
+                password.style = bad;
             }
         }
     });
