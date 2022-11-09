@@ -11,7 +11,7 @@
     
     <div class="left_content">
         <div id="banner">
-            <img src="./images/logo.png" alt="logo" id="logo_img">
+            <img src="./images/globe.png" alt="logo" id="logo_img">
             <span id="logo_title">TITLE</span>
         </div>
         <span>Made by <a href="https://github.com/jcmpdx/signupform" target="_blank">JCMPDX</a></span>
@@ -22,7 +22,7 @@
         You <em>know</em> you want this!
         </div>
         <div class="form_content">
-            <form action="" method="post">
+            <form action="" method="post" id="sign_up_form">
                 <div class="inputcontainer">
                     <h1>Let's do this!</h1>
                     <div>
@@ -47,16 +47,16 @@
                     </div>
                     <div>
                         <div class="form_group">
-                            <label for="password">PASSWORD</label>
+                            <label for="password" id="pw">PASSWORD</label>
                             <input type="password" id="password" name="password" placeholder="*" required>
                         </div>
                         <div class="form_group">
-                            <label for="confirm_password">CONFIRM PASSWORD</label>
+                            <label for="confirm_password" id="cpw">CONFIRM PASSWORD</label>
                             <input type="password" id="confirm_password" name="confirm_password" placeholder="*" required>
                         </div>
                     </div>
                 </div>
-                <button id="create" type="submit">Create Account</button>
+                <button form="sign_up_form" id="create" type="submit">Create Account</button>
             </form>   
         </div>   
         <div id="sign_in">Already have an account? <a href="">Log in</a></div>
@@ -67,21 +67,35 @@
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirm_password');
     const submitButton = document.getElementById('create');
+    const pwLabel = document.getElementById('pw');
+    const cpwLabel = document.getElementById('cpw');
     const good = 'box-shadow: none;';
     const bad = 'box-shadow: 0 0 3px 2px red;';
+    const goodPwIcon = ' ✔';
 
-    confirmPassword.addEventListener('change', function() {
+    function pwCheck() {
         if (password.value !== '') {
             if (confirmPassword.value === password.value) {
                 submitButton.disabled = false;
                 confirmPassword.style = good;
                 password.style = good;
+                pwLabel.textContent += goodPwIcon;
+                cpwLabel.textContent += goodPwIcon;
             } else if (confirmPassword.value !== password.value) {
                 submitButton.disabled = true;
                 confirmPassword.style = bad;
                 password.style = bad;
+                pwLabel.textContent = 'PASSWORD';
+                cpwLabel.textContent = 'CONFIRM PASSWORD';
             }
         }
+    }
+
+    confirmPassword.addEventListener('change', () => {
+        pwCheck();
+    });
+    password.addEventListener('change', () => {
+        pwCheck();
     });
 
 </script>
